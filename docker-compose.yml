@@ -1,0 +1,20 @@
+# docker compose se usa em desenvolvimento, raro ser usado em produção
+
+services:
+  service-pg:
+    image: bitnami/postgresql
+    ports:
+      #  local:docker
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=nlw-connect-nodejs
+
+  service-redis:
+    image: bitnami/redis
+    ports:
+      #  local:docker
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes

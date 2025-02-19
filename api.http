@@ -5,3 +5,7 @@ Content-Type: application/json
   "name": "Valmir Paiva",
   "email": "valmirpaivacpm@gmail.com"
 }
+
+###
+
+GET http://localhost:3333/invites/valmir
