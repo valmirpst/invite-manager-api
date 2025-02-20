@@ -1,10 +1,23 @@
 # docker compose se usa em desenvolvimento, raro ser usado em produção
 
 services:
+  service-api:
+    build: .
+    ports:
+      #  local:docker
+      - "8080:8080"
+    depends_on:
+      - service-pg
+      - service-redis
+    environment:
+      - PORT=8080
+      - WEB_URL=http://localhost:3000
+      - POSTGRES_URL=postgresql://docker:docker@service-pg:5432/nlw-connect-nodejs
+      - REDIS_URL=redis://service-redis:6379
+
   service-pg:
     image: bitnami/postgresql
     ports:
-      #  local:docker
       - "5432:5432"
     environment:
       - POSTGRES_USER=docker
@@ -14,7 +27,6 @@ services:
   service-redis:
     image: bitnami/redis
     ports:
-      #  local:docker
       - "6379:6379"
     environment:
       - ALLOW_EMPTY_PASSWORD=yes

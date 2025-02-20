@@ -2,10 +2,27 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Valmir Paiva",
-  "email": "valmirpaivacpm@gmail.com"
+  "name": "Usuário indicado 3",
+  "email": "indicado3@gmail.com",
+  "referrer": "e89003d7-454b-4d7a-b82d-165db7df852e"
 }
 
 ###
 
-GET http://localhost:3333/invites/valmir
+GET http://localhost:3333/invites/19d28f28-eabc-4e79-bec0-4093e4f0c7b0
+
+###
+
+GET http://localhost:3333/subscribers/19d28f28-eabc-4e79-bec0-4093e4f0c7b0/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/19d28f28-eabc-4e79-bec0-4093e4f0c7b0/ranking/count
+
+###
+
+GET http://localhost:3333/subscribers/19d28f28-eabc-4e79-bec0-4093e4f0c7b0/ranking/position
+
+###
+
+GET http://localhost:3333/ranking
