@@ -30,7 +30,7 @@ app.register(fastifyCors, {
 app.register(fastifySwagger, {
   openapi: {
     info: {
-      title: "NLW Connect Node.js API",
+      title: "NLW Connect Node.js API with Docker",
       version: "0.0.1",
     },
   },
